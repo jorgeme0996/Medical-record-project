@@ -4,6 +4,7 @@ const app = express();
 const { getContract } = require('../interactions/MedicalRecord.interact')
 const { generateQR } = require('../utils/qrCode');
 const connectDB = require('../config/db');
+const { Port } = require('../config/constants');
 
 app.use(express.json())
 
@@ -51,4 +52,4 @@ router.post('/user', async (req, res) => {
 
 app.use('/med-rec', router)
 
-app.listen(8080, () => console.log('Server is listening'));
+app.listen(Port || 8080, () => console.log('Server is listening'));

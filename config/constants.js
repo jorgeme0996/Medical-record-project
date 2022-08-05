@@ -8,6 +8,7 @@ const DefenderSecret=process.env.DEFENDER_SECRET
 const AlquemyApiKey=process.env.ALQUEMY_API_KEY
 const AddressContract=process.env.ADDRESS_CONTRACT
 const MongoUrl=process.env.MONGO_URL
+const Port = process.env.PORT
 
 module.exports = {
     RPCUrl,
@@ -17,5 +18,6 @@ module.exports = {
     DefenderSecret,
     AlquemyApiKey,
     AddressContract,
-    MongoUrl
+    MongoUrl,
+    Port
 }
