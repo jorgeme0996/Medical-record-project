@@ -8,9 +8,18 @@ const DefenderSecret=process.env.DEFENDER_SECRET
 const AlquemyApiKey=process.env.ALQUEMY_API_KEY
 const AddressContract=process.env.ADDRESS_CONTRACT
 const MongoUrl=process.env.MONGO_URL
-const Port = process.env.PORT
+const Port=process.env.PORT
+const Host=process.env.HOST
+const SmtpMail=process.env.SMTP_MAIL
+const SmtpHost=process.env.SMTP_HOST
+const SmtpPassword=process.env.SMTP_PASSWORD
+const SmtpPort=process.env.SMTP_PORT
 
 module.exports = {
+    SmtpPort,
+    SmtpHost,
+    SmtpMail,
+    SmtpPassword,
     RPCUrl,
     PrivateKey,
     PolygonScanApiKey,
@@ -19,5 +28,6 @@ module.exports = {
     AlquemyApiKey,
     AddressContract,
     MongoUrl,
-    Port
+    Port,
+    Host
 }
