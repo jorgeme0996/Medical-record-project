@@ -9,6 +9,9 @@ const { Port, Host } = require('../config/constants');
 const User = require('../model/User');
 const { contact } = require('../services/email.service')
 const timeout = require('connect-timeout')
+const path = require('path')
+
+app.use(express.static(__dirname + "/public"));
 
 app.use(express.json())
 
@@ -28,6 +31,10 @@ router.get('/healthcheck', (req, res) => {
         ok: true
     });
 });
+
+app.get('/medrec/:id', async (req, res) => {
+    res.sendFile('public/sample.pdf', {root: __dirname })
+})
 
 router.post('/defender/webhook', async (req, res) => {
     const addressReceiver = req.body.events[0].matchReasons[0].args[0]
