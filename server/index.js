@@ -1,10 +1,19 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const { getContract } = require('../interactions/MedicalRecord.interact')
 const { generateQR } = require('../utils/qrCode');
+const connectDB = require('../config/db');
+
 app.use(express.json())
 
 const router = express.Router();
+
+//Cors
+app.use(cors({origin: true, credentials: true}))
+
+//Connect to database
+connectDB();
 
 router.get('/healthcheck', (req, res) => {
     // return challenge

@@ -1,12 +1,12 @@
 //const hre = require('hardhat');
 const ethers = require('ethers');
 const { getAbi } = require('../utils/getAbi');
-const { AlquemyApiKey, PrivateKey } = require('../config/constants');
+const { AlquemyApiKey, PrivateKey, AddressContract } = require('../config/constants');
 
 // The path to the contract ABI
 const ABI_FILE_PATH = 'artifacts/contracts/MedicalRecord.sol/MedicalRecord.json';
 // The address from the deployed smart contract
-const DEPLOYED_CONTRACT_ADDRESS = '0x64533CFF44d7662e6Bd9eD2b024e7864e0E3F154';
+const DEPLOYED_CONTRACT_ADDRESS = AddressContract;
 
 const getContract = async () => {
     const provider = new ethers.providers.AlchemyProvider(
