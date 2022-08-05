@@ -8,10 +8,13 @@ const connectDB = require('../config/db');
 const { Port, Host } = require('../config/constants');
 const User = require('../model/User');
 const { contact } = require('../services/email.service')
+const timeout = require('connect-timeout')
 
 app.use(express.json())
 
 const router = express.Router();
+
+app.use(timeout('3600s'))
 
 //Cors
 app.use(cors({origin: true, credentials: true}))
